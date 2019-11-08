@@ -98,6 +98,50 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
+        # Fill this out
+        # while self.can_move_right():
+        #     if self.compare_item() == 1:
+        #         self.swap_item()
+        #         self.move_right()
+        #     if self.compare_item == 0:
+        #         self.move_right():
+        #     else:
+        #         self.move_right():
+
+        while self.can_move_left():
+
+            # Robot is sweeping the list, comparing and swapping items.
+            if self.compare_item() == 1:
+                # Setting light on to indicate the robot is in the process of comparing/sorting.
+                self.set_light_on()
+                self.swap_item()
+                self.move_left()
+            else:
+                self.set_light_on()
+                self.move_left()
+
+        while self.can_move_right():
+
+            if self.compare_item() == -1:
+                self.set_light_on()
+                self.swap_item()
+                self.move_right()
+
+            if self.compare_item() is None:
+                self.set_light_on()
+                self.swap_item()
+                self.move_right
+
+            else:
+                self.move_right()
+
+        if self._item == None:
+            # Setting light off to indicate the robot is not carrying an item.
+            self.set_light_off()
+
+        if self._item != None:
+            # If the robot has an item it's sorting.
+            self.sort()
 
 
 if __name__ == "__main__":
